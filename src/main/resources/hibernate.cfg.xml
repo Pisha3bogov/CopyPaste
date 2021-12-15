@@ -1,0 +1,26 @@
+<!--Копировать все, коментарии лучше удалить -->
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration >
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/<!--За место users пишеться название вашей бд-->users</property>
+        <property name="hibernate.connection.username"><!--Здесь пишеться логин mysql-->root</property>
+        <property name="hibernate.connection.password"><!--Здесь пишеться пароль от mysql--> ?>1111</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="use_sql_comments">true</property>
+
+        <!--В этой строке указывается путь до модели, если моделей несколько то они тоже указываются в других строчках-->
+        <mapping class="ru.shytov.model.Admin"/>
+        <mapping class="ru.shytov.model.Admin"/>
+
+    </session-factory>
+</hibernate-configuration>
